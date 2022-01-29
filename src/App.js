@@ -1,23 +1,18 @@
-import logo from './logo.svg';
+import React from "react";
+import {ProfileComponent} from "./profile/ProfileComponent.js";
+import gbemiYoloye from "./profile/gbemiYoloye.jpg"
 import './App.css';
+import { ImageComponent } from "./profile/ImageComponent.js";
 
 function App() {
+  const handleName = e =>{
+    e.preventDefault();
+    alert("Hello, Gbemi here" );
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ImageComponent>{gbemiYoloye}</ImageComponent>
+      <ProfileComponent fullName = "Yoloye Oluwagbemi" handleName = {handleName} profession = "Football Coach" bio = "Learned Full Stack JS at GoMyCode"/>
     </div>
   );
 }
